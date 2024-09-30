@@ -77,7 +77,10 @@
         </div>
         <div class="element-slidebar-content">
             <a href="{{ route('categorias.index') }}">Todas</a>
+            
+            @can('categorias.create')
             <a href="{{ route('categorias.create') }}">Agregar</a>
+            @endcan
         </div>
     </div>
 

@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class CategoriaController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('can:categorias.create')->only(['create','store']);
+    }
+
     public function index()
     {
          $categorias=Categoria::orderBy('id','ASC')->paginate(1001);
