@@ -9,12 +9,12 @@
 <section class="Controles">
         <!-- control de acceso a bodega -->
         
-            <!-- <div class="control-acceso">
+             <div class="control-acceso">
             <h2>Control de acceso a bodega</h2>
             <button id="ingresarBodegaBtn">Ingresar a bodega</button>
             <button id="salirBodegaBtn">Salir de bodega</button>
             <p id="statusAcceso">Estado de la puerta: Desconocido</p>
-            </div> -->
+            </div> 
             <!-- Control de estado de alarma -->
          
             <div class="control-alarma">

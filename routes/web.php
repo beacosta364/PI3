@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\GestionDelSistema;
 
@@ -49,13 +49,19 @@ Route::middleware('auth')->group(function () {
     // Ruta para la alarma
     Route::get('/alarma', [GestionDelSistema::class, 'alarma'])->name('alarma');
     
+    // Ruta de tipo resource para la gestión de productos
+    Route::resource('/productos', ProductoController::class);
+    
     // Ruta de tipo resource para la gestión de categorías
-    Route::resource('categorias', CategoriaController::class);
+    Route::resource('/categorias', CategoriaController::class);
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+   });
 
 require __DIR__.'/auth.php';
+
+
+

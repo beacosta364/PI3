@@ -18,11 +18,17 @@
     
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos-tablas.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/estilos-show-productos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos-formularios.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos-categoria-detalle.css') }}">
+    
+
 
      <!-- Scripts -->
-     @vite(['resources/css/app.css', 'resources/js/app.js'])
+      <!-- este script esta generando problemas con el hamburguer -->
+     <!-- arreglarlo o cambiar los estilos para el area  de perfil de usuario-->
+      <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
+      <!-- @vite(['resources/js/app.js']) -->
 
 </head>
 <body>
@@ -83,6 +89,23 @@
             @endcan
         </div>
     </div>
+
+
+    <!-- Gestion de Productos -->
+    <div class="element-slidebar">
+        <div class="element-slidebar-btn">
+            <span><img src="{{ asset('img/box1.png') }}" alt="Gestion de productos"></span>
+            <p>Productos</p>
+        </div>
+        <div class="element-slidebar-content">
+            <a href="{{ route('productos.index') }}">Todos</a>
+            
+            @can('productos.create')
+            <a href="{{ route('productos.create') }}">Agregar</a>
+            @endcan
+        </div>
+    </div>
+
 
     <!-- Monitoreo y seguridad -->
     <div class="element-slidebar">

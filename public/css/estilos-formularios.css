@@ -39,11 +39,20 @@
     resize: vertical;
 }
 
+/* Estilos específicos para los campos cantidad y precio */
+#cantidad,
+#precio {
+    width: 100%;
+    font-size: 1.2em;  /* Aumenta el tamaño de la fuente */
+    padding: 12px;     /* Aumenta el padding para que el campo sea más grande */
+    box-sizing: border-box;
+}
+
 /* Estilo del botón */
 .form-group button {
     width: 100%;
     padding: 10px;
-    background-color:rgba(2, 53, 95, 0.842); /* Color verde */
+    background-color:rgba(2, 53, 95, 0.842); /* Color azul */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -66,7 +75,12 @@
     .form-group select {
         padding: 6px;
     }
-
+    
+    #cantidad,
+    #precio {
+        font-size: 1.1em;
+        padding: 10px;
+    }
     .form-group button {
         padding: 8px;
         font-size: 14px;
