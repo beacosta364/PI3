@@ -19,6 +19,233 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+
+
+<!-- estilos para los servicios -->
+<style>
+                /* variables */
+        :root {
+            --color-fuente: rgb(192, 192, 192);
+            --color-fondo: #f4f4f4;
+            --color-boton: #00B2A9;
+            --color-boton-hover: #49f0d4;
+            --tamano-titulos: 2.5rem; /* ajusta según sea necesario */
+        }
+
+        /* reset html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #fff;
+        }
+
+        /* contenedor de servicios */
+        .contenedor-servicios {
+            padding: 50px 20px;
+            background-color: var(--color-fondo);
+        }
+
+        .contenedor-servicios .titulo {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--color-boton);
+        }
+
+        /* diseño de servicios */
+        .contenedor-servicios > div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-acceso-RFID {
+            width: 250px; /* Ajusta según el diseño deseado */
+            height: auto;
+            object-fit: cover; /* Mantiene la proporción de la imagen */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .img-acceso-RFID:hover {
+            transform: scale(1.05);
+        }
+
+        .contenido-texto {
+            padding: 20px;
+            flex: 1; /* Toma el resto del espacio disponible */
+        }
+
+        .contenido-texto h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--color-boton);
+        }
+
+        .contenido-texto p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        /* Servicios en grid */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Servicio individual */
+        .servicio {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        .servicio img {
+            width: 100%;
+            max-width: 100%; /* Limita el ancho máximo al 100% del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: contain; /* Escala la imagen para que quepa en el contenedor, sin recortar */
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .servicio img:hover {
+            transform: scale(1.05);
+        }
+
+        .servicio h3 {
+            font-size: 1.5rem;
+            margin: 10px;
+        }
+
+        /* botones Descripcion */
+        .btn {
+            width: 9em;
+            height: 3em;
+            border-radius: 30em;
+            font-size: 15px;
+            font-family: inherit;
+            border: none;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 6px 6px 12px #1fc0e4, -6px -6px 12px #f3f1f1;
+            background-color: var(--color-boton); 
+            color: white; 
+        }
+
+        .btn::before {
+            content: '';
+            width: 0;
+            height: 3em;
+            border-radius: 3em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, var(--color-boton-hover) 0%, #c1d8ee 100%);
+            transition: .3s ease;
+            display: block;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 9em;
+        }
+
+        /* slow motion */
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+
+
+        /* Contenedor para el video y el texto */
+.contenedor-header {
+    display: flex; /* Usar flexbox para alinear video y texto */
+    flex-direction: column; /* Alinear en columna en dispositivos móviles */
+    align-items: center; /* Centrar horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    background-color: #f4f4f4; /* Fondo claro */
+}
+
+/* Contenedor del video */
+.contenedor-video {
+    width: 100%; /* Ocupa el ancho completo */
+    max-width: 800px; /* Máximo ancho del video */
+    margin-bottom: 20px; /* Espaciado inferior */
+    overflow: hidden; /* Evitar desbordamiento */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para el video */
+.contenedor-video video {
+    width: 100%; /* Ancho completo del contenedor */
+    height: auto; /* Mantener proporción */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Contenedor del texto */
+.contenedor-texto-header {
+    text-align: center; /* Centrar el texto */
+    margin-top: 20px; /* Margen superior */
+}
+
+/* Título principal */
+.contenedor-texto-header h1 {
+    font-size: 2.5rem; /* Tamaño del título */
+    color: var(--color-boton); /* Color del botón */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* Subtítulo */
+.contenedor-texto-header h2 {
+    font-size: 1.8rem; /* Tamaño del subtítulo */
+    color: #333; /* Color del texto */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+/* Estilo del enlace */
+.contenedor-texto-header a {
+    display: inline-block; /* Que ocupe solo el espacio necesario */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: var(--color-boton); /* Color de fondo */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover en el enlace */
+.contenedor-texto-header a:hover {
+    background-color: var(--color-boton-hover); /* Color al pasar el mouse */
+}
+
+    </style>
+
+<!--  -->
+<!-- estilos para la descripcion de servicios -->
+
+<!--  -->
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
@@ -36,6 +263,161 @@
                 </div>
             @endif
 
+
+
+             <!-- Contenedor para el video y el texto -->
+        <section class="contenedor-header">
+            <!-- Video  -->
+            <section class="contenedor-video">
+                <video id="myVideo"  autoplay muted playsinline>  <!--controls**para añadir los controles de video -->
+                    <source src="img2/ABYStart.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </section>
+
+            <!-- Texto  -->
+            <section class="contenedor-texto-header">
+                <h1>ABY technological solutions</h1>
+                <h2>Gestión eficiente, resultados visibles</h2>
+                <a href="#servicios"> Nuestros servicios</a>
+            </section>
+        </section>
+        </div>
+
+
+<!-- ////////////////////////////////////////////////////////////////servicios//////////////////////////////////////////////////////////////// -->
+             <!-- Servicios -->
+    <section id="servicios" class="servicios">
+        <h2>Nuestros servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio">
+                <img src="img2/Producto1.jpeg" alt="servicio">
+                <h3>Control de acceso RFID</h3>
+                <a href="#control-acceso-rfid"><button class="btn">Descripción</button></a>
+            </div>
+            <div class="servicio">
+                <img src="img2/Producto2.jpeg" alt="servicio">
+                <h3>Paginas web</h3>
+                <a href="#paginas-web"><button class="btn">Descripción</button></a>
+            </div>
+            <div class="servicio">
+                <img src="img2/Producto1.jpeg" alt="servicio">
+                <h3>IOT</h3>
+                <a href="#IOT"><button class="btn">Descripción</button></a>
+            </div>
+            <div class="servicio">
+                <img src="img2/Producto1.jpeg" alt="servicio">
+                <h3>Gestion de inventarios</h3>
+                <a href="#gestion-de-inventarios"><button class="btn">Descripción</button></a>
+            </div>
+        </div>
+    </section>
+        </div>
+
+<!-- ////////////////////////////////////////////////////////////////descripcion de servicios//////////////////////////////////////////////////////////////// -->
+<!-- Descripcion de servicios -->
+<section class="contenedor-servicios">
+    <h2 class="titulo">Descripcion de nuestros servicios</h2>
+
+    <div>
+        <img class="img-acceso-RFID" src="img2/Producto1.jpeg" alt="Control de acceso RFID">
+        <div class="contenido-texto">
+            <h3 id="control-acceso-rfid">Control de acceso RFID</h3>
+            <p>Imagina un entorno donde solo las personas autorizadas
+                pueden acceder a áreas clave de tu empresa, donde la seguridad 
+                y la eficiencia se fusionan para proteger tus recursos más 
+                valiosos. Con la tecnología RFID, puedes controlar el acceso 
+                a tus instalaciones de manera discreta pero efectiva, 
+                manteniendo un registro detallado de cada movimiento. 
+                No es solo seguridad, es una gestión inteligente que se 
+                adapta a las necesidades de tu organización, brindándote 
+                tranquilidad y control en un solo sistema.</p>
+        </div>
+    </div>
+    
+    <div>
+        <img class="img-acceso-RFID" src="img2/Producto2.jpeg" alt="Control de acceso RFID">
+        <div class="contenido-texto">
+            <h3 id="paginas-web">Paginas web</h3>
+            <p>Un sitio web bien diseñado es esencial para conectar con tus clientes 
+                y destacar en el mercado digital. Creamos páginas web visualmente a
+                tractivas y funcionales, optimizadas para una navegación fluida y 
+                una experiencia de usuario excepcional. Desde el diseño hasta la 
+                funcionalidad, cada detalle está pensado para impulsar tu presencia 
+                en línea y potenciar tu negocio.</p>
+        </div>
+    </div>
+
+    <div>
+        <img class="img-acceso-RFID" src="img2/Producto2.jpeg" alt="Control de acceso RFID">
+        <div class="contenido-texto">
+            <h3 id="IOT">IOT</h3>
+            <p>La solución de software desarrollada por la empresa 
+                integra la gestión empresarial con tecnología IoT, 
+                permitiendo a los usuarios monitorear y controlar sus 
+                sistemas en tiempo real desde cualquier ubicación. 
+                Diseñado para ser adaptable y seguro, el programa 
+                optimiza la eficiencia y facilita la toma de decisiones, 
+                asegurando que las empresas estén preparadas para el futuro..</p>
+        </div>
+    </div>
+
+    <div>
+        <img class="img-acceso-RFID" src="img2/Producto2.jpeg" alt="Control de acceso RFID">
+        <div class="contenido-texto">
+            <h3 id="gestion-de-inventarios">Gestion de inventarios</h3>
+            <p>El software de Gestión de Inventarios permite a las empresas controlar 
+                y optimizar sus productos en tiempo real. Con funciones como alertas 
+                automáticas , este programa mejora la eficiencia operativa y asegura 
+                un manejo preciso del inventario, adaptándose a las necesidades 
+                específicas de cada negocio.</p>
+        </div>
+    </div>
+
+ </section>
+<!-- ////////////////////////////////////////////////////////////////footer//////////////////////////////////////////////////////////////// -->
+        <footer>
+            <p>&copy;2024 ABY technological solutions. Todos los derechos reservados </p>
+            <div class="footer-links">
+                <a href="">Politica de Privacidad</a>
+                <a href="">Terminos y condiciones</a>
+                <a href="https://wa.me/523167245788">Contacto</a>
+     
+            </div>
+        </footer>
+
+
+        <head>
+    <!-- Otros enlaces y scripts -->
+    <style>
+        footer {
+            background-color: #100e45; /* Color de fondo */
+            color: white; /* Color del texto */
+            text-align: center; /* Centrar texto */
+            padding: 20px 0; /* Espaciado vertical */
+            position: relative; /* Para un mejor posicionamiento si es necesario */
+            bottom: 0; /* Para estar siempre al fondo si es necesario */
+            width: 100%; /* Ancho completo */
+        }
+
+        .footer-links {
+            margin-top: 10px; /* Espaciado superior */
+        }
+
+        .footer-links a {
+            color: #00B2A9; /* Color de los enlaces */
+            text-decoration: none; /* Sin subrayado */
+            margin: 0 15px; /* Espaciado entre enlaces */
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline; /* Subrayado al pasar el mouse */
+        }
+    </style>
+</head>
+
+    </body>
+</html>
             <!-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
@@ -127,6 +509,3 @@
                     </div>
                 </div>
             </div> -->
-        </div>
-    </body>
-</html>

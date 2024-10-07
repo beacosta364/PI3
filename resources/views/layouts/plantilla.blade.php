@@ -24,11 +24,13 @@
     
 
 
-     <!-- Scripts -->
-      <!-- este script esta generando problemas con el hamburguer -->
-     <!-- arreglarlo o cambiar los estilos para el area  de perfil de usuario-->
-      <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
-      <!-- @vite(['resources/js/app.js']) -->
+    <!-- Scripts -->
+    <!-- este script esta generando problemas con el hamburguer -->
+    <!-- arreglarlo o cambiar los estilos para el area  de perfil de usuario-->
+    <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
+    @vite(['resources/js/app.js'])
+  
+
 
 </head>
 <body>
