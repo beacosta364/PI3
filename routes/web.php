@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\GestionDelSistema;
-
+use App\Http\Controllers\MovimientoProductoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +54,24 @@ Route::middleware('auth')->group(function () {
     
     // Ruta de tipo resource para la gestión de categorías
     Route::resource('/categorias', CategoriaController::class);
+
+
+
+    // // Ruta para almacenar el movimiento
+    // Route::post('/movimientos', [MovimientoProductoController::class, 'store'])->name('movimientos.store');
+    // Route::get('/movimientos/reportes', [MovimientoProductoController::class, 'index'])->name('movimientos.reportes');
+
+    // // Si deseas tener un método create para un producto específico
+    // Route::get('/movimientos/create/{producto_id}', [MovimientoProductoController::class, 'create'])->name('movimientos.create');
+
+// Ruta para almacenar el movimiento
+Route::post('/movimientos', [MovimientoProductoController::class, 'store'])->name('movimientos.store');
+
+// Ruta para reportes de movimientos
+Route::get('/movimientos/reportes', [MovimientoProductoController::class, 'index'])->name('movimientos.reportes');
+
+// Ruta para crear un movimiento para un producto específico
+Route::get('/movimientos/create/{producto_id}', [MovimientoProductoController::class, 'create'])->name('movimientos.create');
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

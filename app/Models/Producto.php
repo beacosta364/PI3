@@ -17,4 +17,12 @@ class Producto extends Model
     public function categoria(){
         return $this->belongsTo(Categoria::class, 'categoria_id');
     }
+
+
+    // Relación con el modelo MovimientoProducto
+    public function movimientos()
+    {
+        return $this->hasMany(MovimientoProducto::class, 'producto_id');
+    }
+
 }

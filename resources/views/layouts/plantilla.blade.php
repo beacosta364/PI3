@@ -136,17 +136,17 @@
         <!-- Reportes -->
         <div class="element-slidebar">
             <div class="element-slidebar-btn">
-             <span><img src="{{asset('img/Reports.png')}}" alt="Reportes"></span>
-             <p>Reportes</p>
+                <span><img src="{{asset('img/Reports.png')}}" alt="Reportes"></span>
+                <p>Reportes</p>
             </div>
             <div class="element-slidebar-content">
                 <a href="">Reportes de inventarios</a>
-                <a href="">Reportes de usuarios</a>
+                <a href="{{ route('movimientos.reportes') }}">Reportes de movimientos</a>
                 <a href="">Reportes de proveedores</a>
                 <a href="">Reportes financieros</a>
-    
             </div>
         </div>
+
     </div>
    </aside>
 
