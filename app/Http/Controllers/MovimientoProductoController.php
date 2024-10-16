@@ -4,18 +4,35 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use App\Models\MovimientoProducto;
+use App\Models\Categoria; // Asegúrate de que esto sea correcto
+
 use Illuminate\Http\Request;
 
 class MovimientoProductoController extends Controller
 {
-    public function index()
-    {
-        // Obtener todos los movimientos con sus productos y usuarios
-        $movimientos = MovimientoProducto::with(['producto', 'usuario'])->get();
+    // public function index()
+    // {
+    //     // Obtener todos los movimientos con sus productos y usuarios
+    //     $movimientos = MovimientoProducto::with(['producto', 'usuario'])->get();
         
-        // Retornar la vista con los movimientos
-        return view('movimientos.index', compact('movimientos'));
-    }
+    //     // Retornar la vista con los movimientos
+    //     return view('movimientos.index', compact('movimientos'));
+    // }
+    public function index()
+{
+    // Obtener todos los movimientos con sus productos y usuarios
+    $movimientos = MovimientoProducto::with(['producto', 'usuario'])->get();
+
+    // Obtener todas las categorías
+    $categorias = Categoria::orderBy('id', 'ASC')->get();
+
+    // Obtener todos los productos
+    $productos = Producto::orderBy('id', 'ASC')->get(); // Asegúrate de obtener los productos
+
+    // Retornar la vista con los movimientos, categorías y productos
+    return view('movimientos.index', compact('movimientos', 'categorias', 'productos'));
+}
+
 
     public function create($producto_id)
     {

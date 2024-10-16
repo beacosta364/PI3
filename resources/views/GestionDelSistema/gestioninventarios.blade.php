@@ -6,6 +6,12 @@
 <div class="container">
     <h1>Gestión de Inventarios</h1>
 
+    <!-- Barra de búsqueda -->
+    <div class="form-group">
+        <label for="search">Buscar Producto:</label>
+        <input type="text" id="search" class="form-control" placeholder="Buscar producto..." onkeyup="filterProducts()">
+    </div>
+
     <!-- Formulario para movimiento de productos -->
     <form action="{{ route('movimientos.store') }}" method="POST" onsubmit="return validateQuantity()">
         @csrf
@@ -61,6 +67,20 @@
             return false; // Evita el envío del formulario
         }
         return true; // Permite el envío del formulario
+    }
+
+    function filterProducts() {
+        const searchInput = document.getElementById('search').value.toLowerCase();
+        const options = document.querySelectorAll('#producto_id option');
+
+        options.forEach(option => {
+            const productName = option.textContent.toLowerCase();
+            if (productName.includes(searchInput)) {
+                option.style.display = 'block'; // Muestra la opción si coincide con la búsqueda
+            } else {
+                option.style.display = 'none'; // Oculta la opción si no coincide
+            }
+        });
     }
 </script>
 
