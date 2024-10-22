@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\GestionDelSistema;
 use App\Http\Controllers\MovimientoProductoController;
+use App\Http\Controllers\ConfiguracionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,6 +74,17 @@ Route::get('/movimientos/reportes', [MovimientoProductoController::class, 'index
 // Ruta para crear un movimiento para un producto específico
 Route::get('/movimientos/create/{producto_id}', [MovimientoProductoController::class, 'create'])->name('movimientos.create');
 
+    Route::get('/configuracion/create', [ConfiguracionController::class, 'create'])->name('configuracion.create');
+    Route::post('/configuracion', [ConfiguracionController::class, 'store'])->name('configuracion.store');
+    Route::get('/configuracion/edit', [ConfiguracionController::class, 'edit'])->name('configuracion.edit');
+    Route::put('/configuracion', [ConfiguracionController::class, 'update'])->name('configuracion.update');
+    // Ruta para mostrar el índice 
+    Route::get('/configuracion', [ConfiguracionController::class, 'index'])->name('configuracion.index');
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Route::get('/configuracion/control', [ConfiguracionController::class, 'control'])->name('configuracion.control');////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

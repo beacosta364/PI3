@@ -72,8 +72,9 @@
         <div class="element-slidebar-content">
          <a href="{{ route('gestioninventarios') }}">Gestion del inventarios</a>
          <a href="{{ route('gestionusuarios') }}">Gestion de usuarios</a>
-         <a href="{{ route('controlacceso') }}">Control de acceso</a>
-         <a href="{{ route('alarma') }}">Gestion de Alarma</a>
+         <!-- <a href="{{ route('controlacceso') }}">Control de acceso</a> -->
+         <a href="{{ route('configuracion.control') }}">Ir a la gestión de alarma y acceso</a>
+         <!-- <a href="{{ route('alarma') }}">Gestion de Alarma</a> -->
          <!-- <a href="">Proveedores</a> -->
         </div>
     </div>
@@ -129,7 +130,7 @@
          <p>Configuración y soporte</p>
         </div>
         <div class="element-slidebar-content">
-            <a href="">Configuración</a>
+            <a href="{{ route('configuracion.create') }}">Configuración</a>
             <a href="">Soporte y documentación</a>
 
         </div>
