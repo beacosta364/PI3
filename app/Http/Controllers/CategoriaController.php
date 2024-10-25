@@ -15,7 +15,7 @@ class CategoriaController extends Controller
 
     public function index()
     {
-         $categorias=Categoria::orderBy('id','ASC')->paginate(1001);
+         $categorias=Categoria::orderBy('id','ASC')->paginate(20);
         return view('categorias.index', compact('categorias'));
 
         // jeison de la tabla categorias

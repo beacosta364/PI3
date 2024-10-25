@@ -49,6 +49,29 @@
             @endforeach
         </tbody>
     </table>
+    <!-- Paginación personalizada -->
+<div class="pagination">
+    @if ($movimientos->onFirstPage())
+        <span class="disabled">« Anterior</span>
+    @else
+        <a href="{{ $movimientos->previousPageUrl() }}">« Anterior</a>
+    @endif
+
+    @for ($i = 1; $i <= $movimientos->lastPage(); $i++)
+        @if ($i == $movimientos->currentPage())
+            <span class="current">{{ $i }}</span>
+        @else
+            <a href="{{ $movimientos->url($i) }}">{{ $i }}</a>
+        @endif
+    @endfor
+
+    @if ($movimientos->hasMorePages())
+        <a href="{{ $movimientos->nextPageUrl() }}">Siguiente »</a>
+    @else
+        <span class="disabled">Siguiente »</span>
+    @endif
+</div>
+
 </div>
 
 <script>

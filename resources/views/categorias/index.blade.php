@@ -54,6 +54,36 @@
             @endforeach          
         </tbody>
     </table>
+    
+    <!-- Paginación personalizada -->
+    <div class="pagination">
+        @if ($categorias->onFirstPage())
+            <span class="disabled">« Anterior</span>
+        @else
+            <a href="{{ $categorias->previousPageUrl() }}">« Anterior</a>
+        @endif
+
+        @for ($i = 1; $i <= $categorias->lastPage(); $i++)
+            @if ($i == $categorias->currentPage())
+                <span class="current">{{ $i }}</span>
+            @else
+                <a href="{{ $categorias->url($i) }}">{{ $i }}</a>
+            @endif
+        @endfor
+
+        @if ($categorias->hasMorePages())
+            <a href="{{ $categorias->nextPageUrl() }}">Siguiente »</a>
+        @else
+            <span class="disabled">Siguiente »</span>
+        @endif
+    </div>
+    </section>
+
+    <script>
+        function confirmarEliminacion() {
+            return confirm('¿Seguro deseas eliminar?'); // Muestra el mensaje de confirmación
+        }
+    </script>
  
    </section>
    

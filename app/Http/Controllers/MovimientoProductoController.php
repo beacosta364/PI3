@@ -21,7 +21,7 @@ class MovimientoProductoController extends Controller
     public function index()
 {
     // Obtener todos los movimientos con sus productos y usuarios
-    $movimientos = MovimientoProducto::with(['producto', 'usuario'])->get();
+    $movimientos = MovimientoProducto::with(['producto', 'usuario'])->paginate(10);  //->get();
 
     // Obtener todas las categorías
     $categorias = Categoria::orderBy('id', 'ASC')->get();

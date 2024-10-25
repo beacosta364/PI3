@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
-use App\Models\Categoria; // Asegúrate de que esta línea esté presente
+use App\Models\Categoria; 
 
 
 class ProductoController extends Controller
