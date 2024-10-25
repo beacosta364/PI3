@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\GestionDelSistema;
 use App\Http\Controllers\MovimientoProductoController;
 use App\Http\Controllers\ConfiguracionController;
+use App\Http\Controllers\PdfController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -85,6 +86,9 @@ Route::get('/movimientos/create/{producto_id}', [MovimientoProductoController::c
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     Route::get('/configuracion/control', [ConfiguracionController::class, 'control'])->name('configuracion.control');////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //pdf
+    Route::get('/pdfproducto', [PdfController::class, 'pdfProductos'])->name('pdfProductos');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

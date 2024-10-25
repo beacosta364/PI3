@@ -90,6 +90,58 @@
     background-color: var(--color-boton-hover);
 }
 
+
+/* .botones-superiores {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-generar-pdf, .btn-agregar {
+    padding: 10px 20px;
+    background-color: rgba(2, 53, 95, 0.842);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-generar-pdf:hover, .btn-agregar:hover {
+    background-color: rgba(6, 82, 145, 0.842);
+} */
+
+.botones-superiores {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.btn-generar-pdf, .btn-agregar {
+    padding: 10px 20px;
+    background-color: rgba(2, 53, 95, 0.842); 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Invierte la posición de los botones */
+.botones-superiores a:nth-child(1) {
+    order: 2; /* Coloca el primer botón en la segunda posición */
+}
+
+.botones-superiores a:nth-child(2) {
+    order: 1; /* Coloca el segundo botón en la primera posición */
+}
+
+.btn-generar-pdf:hover, .btn-agregar:hover {
+    background-color: rgba(6, 82, 145, 0.842); 
+}
+
+
 /* Responsividad */
 @media (max-width: 600px) {
     .container h1 {

@@ -1,0 +1,41 @@
+/* Estilos generales para la paginación */
+.pagination {
+    display: flex; /* Usa flexbox para organizar los elementos en fila */
+    justify-content: center; /* Centra la paginación horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.pagination a, .pagination .current, .pagination .disabled {
+    padding: 8px 12px; /* Ajusta el padding según necesites */
+    margin: 0 5px; /* Espacio entre los elementos */
+    border: 1px solid rgba(2, 53, 95, 0.842);
+    color: rgba(2, 53, 95, 0.842);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    background-color: rgba(6, 82, 145, 0.842);
+    color: white;
+}
+
+.pagination .current {
+    background-color: rgba(2, 53, 95, 0.842);
+    color: white;
+    pointer-events: none; /* Deshabilitar el clic en el botón activo */
+    font-weight: bold; /* Hacer que el número activo resalte más */
+}
+
+.pagination .disabled {
+    color: #ccc;
+}
+
+/* Espaciado para botones de anterior y siguiente */
+.pagination .disabled,
+.pagination a {
+    min-width: 80px; /* Asegura que todos los botones tengan el mismo ancho */
+    text-align: center; /* Centra el texto en los botones */
+}

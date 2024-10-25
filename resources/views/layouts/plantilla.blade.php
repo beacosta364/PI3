@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('css/estilos-show-productos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos-formularios.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos-categoria-detalle.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
 
 
     <!-- Scripts -->

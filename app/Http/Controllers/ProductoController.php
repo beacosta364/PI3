@@ -17,7 +17,7 @@ class ProductoController extends Controller
     public function index()
     {
         // Obtener todos los productos con su categoría
-        $productos = Producto::orderBy('id','ASC')->paginate(100);
+        $productos = Producto::orderBy('id','ASC')->paginate(10);
 
         // Retornar una vista con los productos
         return view('productos.index', compact('productos'));

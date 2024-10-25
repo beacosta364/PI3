@@ -3,6 +3,10 @@
 @section('contenido')
 <section class="container-tabla">
     <h2 class="titulo-tabla">Productos</h2>
+    <div class="botones-superiores">
+        <a href="{{ route('pdfProductos') }}" target="_blank" class="btn-generar-pdf">Generar PDF</a>
+        <a href="{{ route('productos.create') }}" class="btn-agregar">Agregar Producto</a>
+    </div>
     <table>
         <thead>
             <tr>
@@ -60,5 +64,30 @@
             @endforeach          
         </tbody>
     </table>
+    
+
+    <!-- Paginación personalizada -->
+    <div class="pagination">
+        @if ($productos->onFirstPage())
+            <span class="disabled">« Anterior</span>
+        @else
+            <a href="{{ $productos->previousPageUrl() }}">« Anterior</a>
+        @endif
+
+        @for ($i = 1; $i <= $productos->lastPage(); $i++)
+            @if ($i == $productos->currentPage())
+                <span class="current">{{ $i }}</span>
+            @else
+                <a href="{{ $productos->url($i) }}">{{ $i }}</a>
+            @endif
+        @endfor
+
+        @if ($productos->hasMorePages())
+            <a href="{{ $productos->nextPageUrl() }}">Siguiente »</a>
+        @else
+            <span class="disabled">Siguiente »</span>
+        @endif
+    </div>
 </section>
+
 @endsection
