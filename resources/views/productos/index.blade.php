@@ -41,16 +41,16 @@
                 @endif
                 <td>
                     <a href="{{ route('productos.show', [$producto->id]) }}">
-                        <img src="img/view.png" alt="" class="icono-accion">
+                        <img src="img/Vista.png" alt="" class="icono-accion">
                     </a>
                     <a href="{{ route('productos.edit', [$producto->id]) }}">
-                        <img src="img/edit.png" alt="" class="icono-accion">
+                        <img src="img/Editar.png" alt="" class="icono-accion">
                     </a>
                     @can('productos.destroy')
                     <form action="{{ route('productos.destroy', [$producto->id]) }}" method="POST" onsubmit="return confimarEliminacion()">
                         @csrf
                         @method('DELETE')
-                        <input type="image" src="img/delete.png" alt="Eliminar" class="icono-accion">
+                        <input type="image" src="img/Eliminar.png" alt="Eliminar" class="icono-accion">
                     </form>
                     @endcan
                     <script>

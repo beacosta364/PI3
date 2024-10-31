@@ -25,10 +25,10 @@
                
                 <td >
                  <a href="{{route('categorias.show',[$categoria->id])}}">
-                    <img src="img/view.png" alt="">
+                    <img src="img/Vista.png" alt="">
                  </a>
                  <a href="{{route('categorias.edit',[$categoria->id])}}">
-                    <img src="img/edit.png" alt="">
+                    <img src="img/Editar.png" alt="">
                  </a>
                  <a href="{{route('categorias.destroy',[$categoria->id])}}">
                    
@@ -40,7 +40,7 @@
                     @csrf
                     {{-- agregar metodo delete --}}
                     @method('DELETE')
-                    <input type="image"src="img/delete.png"></input>
+                    <input type="image"src="img/Eliminar.png"></input>
 
                  </form>
                  @endcan

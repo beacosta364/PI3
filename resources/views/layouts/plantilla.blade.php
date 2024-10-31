@@ -41,14 +41,14 @@
     <!-- Logo Empresa -->
     <div class="element-slidebar">
         <div class="element-slidebar-btn profile">
-         <span><img src="{{asset('img/logoLaPapa.jpg')}}" alt="Logo"></span>
+         <span><img src="{{asset('img2/LogoLaPapa.png')}}" alt="Logo"></span>
          <p>La Papa</p>
         </div>
     </div>
     <!-- PERFIL -->
     <div class="element-slidebar">
         <div class="element-slidebar-btn profile">
-         <span><img src="{{asset('img/face2.jpg')}}" alt="avatar"></span>
+         <span><img src="{{asset('img/Admin.png')}}" alt="avatar"></span>
          <p>{{Auth::User()->name}}</p>
         </div>
         <div class="element-slidebar-content">
@@ -66,7 +66,7 @@
     
     <div class="element-slidebar">
         <div class="element-slidebar-btn">
-         <span><img src="{{asset('img/box1.png')}}" alt="Gestion del sistema"></span>
+         <span><img src="{{asset('img/GestionDelSistema.png')}}" alt="Gestion del sistema"></span>
          <p>Gestion del sistema</p>
         </div>
         <div class="element-slidebar-content">
@@ -81,7 +81,7 @@
     <!--Categoria Productos-->
     <div class="element-slidebar">
         <div class="element-slidebar-btn">
-            <span><img src="{{asset('img/box1.png')}}" alt="Gestion del categorias"></span>
+            <span><img src="{{asset('img/Categoria.png')}}" alt="Gestion del categorias"></span>
             <p>Categorias</p>
         </div>
         <div class="element-slidebar-content">
@@ -97,7 +97,7 @@
     <!-- Gestion de Productos -->
     <div class="element-slidebar">
         <div class="element-slidebar-btn">
-            <span><img src="{{ asset('img/box1.png') }}" alt="Gestion de productos"></span>
+            <span><img src="{{ asset('img/Productos.png') }}" alt="Gestion de productos"></span>
             <p>Productos</p>
         </div>
         <div class="element-slidebar-content">
@@ -113,7 +113,7 @@
     <!-- Monitoreo y seguridad -->
     <div class="element-slidebar">
         <div class="element-slidebar-btn">
-         <span><img src="{{asset('img/security.png')}}" alt="Monitoreo y seguridad"></span>
+         <span><img src="{{asset('img/MonitoreodeSeguridad.png')}}" alt="Monitoreo y seguridad"></span>
          <p>Monitoreo y seguridad</p>
         </div>
         <div class="element-slidebar-content">
@@ -126,7 +126,7 @@
     <!-- Configuración y soporte -->
     <div class="element-slidebar">
         <div class="element-slidebar-btn">
-         <span><img src="{{asset('img/Configutration1.png')}}" alt="Configuración y soporte"></span>
+         <span><img src="{{asset('img/ConfiguracionyReportes.png')}}" alt="Configuración y soporte"></span>
          <p>Configuración y soporte</p>
         </div>
         <div class="element-slidebar-content">
@@ -137,7 +137,7 @@
         <!-- Reportes -->
         <div class="element-slidebar">
             <div class="element-slidebar-btn">
-                <span><img src="{{asset('img/Reports.png')}}" alt="Reportes"></span>
+                <span><img src="{{asset('img/Reportes.png')}}" alt="Reportes"></span>
                 <p>Reportes</p>
             </div>
             <div class="element-slidebar-content">

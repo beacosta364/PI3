@@ -301,12 +301,12 @@
                 <a href="#paginas-web"><button class="btn">Descripción</button></a>
             </div>
             <div class="servicio">
-                <img src="img2/Producto1.jpeg" alt="servicio">
+                <img src="img/IOTinicio.png" alt="servicio">
                 <h3>IOT</h3>
                 <a href="#IOT"><button class="btn">Descripción</button></a>
             </div>
             <div class="servicio">
-                <img src="img2/Producto1.jpeg" alt="servicio">
+                <img src="img/GestionDeInventario.png" alt="servicio">
                 <h3>Gestion de inventarios</h3>
                 <a href="#gestion-de-inventarios"><button class="btn">Descripción</button></a>
             </div>
@@ -349,7 +349,7 @@
     </div>
 
     <div>
-        <img class="img-acceso-RFID" src="img2/Producto2.jpeg" alt="Control de acceso RFID">
+        <img class="img-acceso-RFID" src="img/IOTinicio.png" alt="Control de acceso RFID">
         <div class="contenido-texto">
             <h3 id="IOT">IOT</h3>
             <p>La solución de software desarrollada por la empresa 
@@ -363,7 +363,7 @@
     </div>
 
     <div>
-        <img class="img-acceso-RFID" src="img2/Producto2.jpeg" alt="Control de acceso RFID">
+        <img class="img-acceso-RFID" src="img/GestionDeInventario.png" alt="Control de acceso RFID">
         <div class="contenido-texto">
             <h3 id="gestion-de-inventarios">Gestion de inventarios</h3>
             <p>El software de Gestión de Inventarios permite a las empresas controlar 
