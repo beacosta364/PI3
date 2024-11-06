@@ -74,6 +74,7 @@
          <a href="{{ route('gestionusuarios') }}">Gestion de usuarios</a>
          <!-- <a href="{{ route('controlacceso') }}">Control de acceso</a> -->
          <a href="{{ route('configuracion.control') }}">Ir a la gestión de alarma y acceso</a>
+         <a href="{{ route('productos.agotados') }}" class="btn btn-warning">Ver Productos Agotados o Por Agotarse</a>
          <!-- <a href="{{ route('alarma') }}">Gestion de Alarma</a> -->
          <!-- <a href="">Proveedores</a> -->
         </div>

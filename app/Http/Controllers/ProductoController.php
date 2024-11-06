@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Models\Categoria; 
+use Illuminate\Support\Facades\DB;
 
 
 class ProductoController extends Controller
@@ -22,6 +23,18 @@ class ProductoController extends Controller
         // Retornar una vista con los productos
         return view('productos.index', compact('productos'));
         
+    }
+    public function agotados()
+    {
+        // Obtener productos agotados (cantidad == 0) o productos por agotarse (cantidad < min_stock)
+        $productosAgotados = Producto::where('cantidad', 0)
+                            ->orWhere('cantidad', '<', DB::raw('min_stock'))
+                            ->orderBy('cantidad', 'asc')
+                            ->get();
+
+
+        // Retornar la vista con los productos agotados o por agotarse
+        return view('productos.agotados', compact('productosAgotados'));
     }
 
     /**
@@ -48,7 +61,7 @@ class ProductoController extends Controller
         'nombre' => 'required|string|max:255',
         'descripcion' => 'nullable|string|max:1000',
         'cantidad' => 'required|integer|min:1',
-        'precio' => 'nullable|numeric|min:0',
+        'min_stock' => 'nullable|integer|min:0',  // Cambiado 'precio' por 'MinStock'
         'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Hasta 2MB
         'categoria_id' => 'required|exists:categorias,id', // Verifica que la categoría exista
     ]);
@@ -68,7 +81,7 @@ class ProductoController extends Controller
     $producto->nombre = $request->nombre;             // Almacena el nombre
     $producto->descripcion = $request->descripcion;   // Almacena la descripción
     $producto->cantidad = $request->cantidad;         // Almacena la cantidad
-    $producto->precio = $request->precio;             // Almacena el precio
+    $producto->min_stock = $request->min_stock;         // Almacena el stock mínimo
     $producto->imagen = $nombreImagen;                 // Asigna la imagen (si existe)
     $producto->categoria_id = $request->categoria_id; // Almacena la categoría
     $producto->usuario_id = auth()->id();              // Asigna el ID del usuario autenticado
@@ -142,7 +155,7 @@ public function edit(Producto $producto)
         'nombre' => 'required|string|max:255',
         'descripcion' => 'nullable|string|max:1000',
         'cantidad' => 'required|integer|min:1',
-        'precio' => 'nullable|numeric|min:0',
+        'min_stock' => 'nullable|integer|min:0',  // Cambiado 'precio' por 'MinStock'
         'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         'categoria_id' => 'required|exists:categorias,id',
     ]);
@@ -171,7 +184,7 @@ public function edit(Producto $producto)
     $producto->nombre = $request->nombre;
     $producto->descripcion = $request->descripcion;
     $producto->cantidad = $request->cantidad;
-    $producto->precio = $request->precio;
+    $producto->min_stock = $request->min_stock;  // Actualizado con el nuevo campo
     $producto->imagen = $nombreImagen;
     $producto->categoria_id = $request->categoria_id;
 

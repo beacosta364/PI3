@@ -290,6 +290,14 @@ h1 {
         margin: 10px 0;
     }
 }
+.titulo-productos-por-agotarse {
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 24px; /* Ajusta el tamaño de la fuente */
+    font-weight: bold; /* Pone el texto en negrita */
+    color: #100e45; /* Color similar al que usas para el fondo de la tabla */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+}
 
 
 /* slow motion */

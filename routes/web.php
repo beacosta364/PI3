@@ -42,6 +42,10 @@ Route::middleware('auth')->group(function () {
     // Ruta para la gestión de inventarios
     Route::get('/gestioninventarios', [GestionDelSistema::class, 'index'])->name('gestioninventarios');
 
+
+    Route::get('/productos/agotados', [ProductoController::class, 'agotados'])->name('productos.agotados');
+   
+
     // Ruta para la gestión de usuarios (posiblemente agregarlos)
     Route::get('/gestionusuarios', [GestionDelSistema::class, 'agregar'])->name('gestionusuarios');
 

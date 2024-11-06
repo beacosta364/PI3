@@ -23,12 +23,20 @@
     </div>
 </section>
 
+@if ($configuracion)
+    <!-- Si la IP está configurada, se usa en los scripts -->
+    <script>
+        const ipAddress = "{{ $configuracion->ip }}"; // Asigna la IP desde la base de datos
+        console.log('IP desde la base de datos:', ipAddress);
+    </script>
+@else
+    <!-- Si no hay IP registrada, se muestra un mensaje en la interfaz -->
+    <script>
+        alert("IP no registrada, por favor configúrela.");
+    </script>
+@endif
+
 <script>
-    // Obtener la IP desde el controlador usando Blade
-    const ipAddress = "{{ $configuracion->ip }}"; // Asigna la IP desde la base de datos
-
-    console.log('IP desde la base de datos:', ipAddress);
-
     // Función para ingresar a la bodega (Encender LED 1)
     document.getElementById("ingresarBodegaBtn").addEventListener("click", function() {
         fetch(`http://${ipAddress}/on1`)

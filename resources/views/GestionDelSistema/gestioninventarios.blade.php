@@ -1,16 +1,9 @@
-
 @extends('layouts.plantilla')
 
 @section('contenido')
 
 <div class="container">
-    <h1>Gestión de Inventarios</h1>
-
-    <!-- Barra de búsqueda -->
-    <div class="form-group">
-        <label for="search">Buscar Producto:</label>
-        <input type="text" id="search" class="form-control" placeholder="Buscar producto..." onkeyup="filterProducts()">
-    </div>
+    <h1>Registrar Movimiento de Producto</h1>
 
     <!-- Formulario para movimiento de productos -->
     <form action="{{ route('movimientos.store') }}" method="POST" onsubmit="return validateQuantity()">
@@ -51,37 +44,41 @@
 </div>
 
 <script>
+    // Función para actualizar la cantidad disponible en el formulario según el producto seleccionado
     function updateAvailableQuantity() {
         const selectedOption = document.querySelector('#producto_id option:checked');
         const availableQuantity = selectedOption.getAttribute('data-quantity');
-        document.getElementById('cantidad').setAttribute('max', availableQuantity);
+        
+        // Actualiza el atributo max de la cantidad con la cantidad disponible
+        const cantidadInput = document.getElementById('cantidad');
+        cantidadInput.setAttribute('max', availableQuantity);
+
+        // Reinicia el valor de cantidad si es mayor que el máximo permitido
+        if (parseInt(cantidadInput.value) > parseInt(availableQuantity)) {
+            cantidadInput.value = availableQuantity;  // Ajusta el valor de cantidad al máximo
+        }
     }
 
+    // Función para validar la cantidad según el tipo de movimiento
     function validateQuantity() {
         const selectedOption = document.querySelector('#producto_id option:checked');
         const availableQuantity = parseInt(selectedOption.getAttribute('data-quantity'));
         const cantidad = parseInt(document.getElementById('cantidad').value);
+        const tipoMovimiento = document.getElementById('tipo_movimiento').value;
 
-        if (document.getElementById('tipo_movimiento').value === 'salida' && cantidad > availableQuantity) {
-            alert('La cantidad solicitada supera la cantidad disponible.');
-            return false; // Evita el envío del formulario
-        }
-        return true; // Permite el envío del formulario
-    }
-
-    function filterProducts() {
-        const searchInput = document.getElementById('search').value.toLowerCase();
-        const options = document.querySelectorAll('#producto_id option');
-
-        options.forEach(option => {
-            const productName = option.textContent.toLowerCase();
-            if (productName.includes(searchInput)) {
-                option.style.display = 'block'; // Muestra la opción si coincide con la búsqueda
-            } else {
-                option.style.display = 'none'; // Oculta la opción si no coincide
+        // Validamos solo para "salida", para "ingreso" no hay restricción
+        if (tipoMovimiento === 'salida') {
+            if (cantidad > availableQuantity) {
+                alert('La cantidad solicitada supera la cantidad disponible.');
+                return false; // Evita el envío del formulario
             }
-        });
+        }
+
+        return true; // Permite el envío del formulario si la validación pasa
     }
+
+    // Llamada inicial para actualizar la cantidad cuando se carga la página
+    updateAvailableQuantity();
 </script>
 
 @endsection

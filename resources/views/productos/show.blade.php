@@ -9,7 +9,7 @@
             <h5 class="card-title">Nombre: {{ $producto->nombre }}</h5>
             <p class="card-text">Descripción: {{ $producto->descripcion }}</p>
             <p class="card-text">Cantidad: {{ $producto->cantidad }}</p>
-            <p class="card-text">Precio: ${{ number_format($producto->precio, 2) }}</p>
+            <!-- <p class="card-text">Precio: ${{ number_format($producto->precio, 2) }}</p> -->
             @if ($producto->imagen)
                 <img src="{{ asset('img/' . $producto->imagen) }}" alt="{{ $producto->nombre }}" class="img-fluid">
             @endif

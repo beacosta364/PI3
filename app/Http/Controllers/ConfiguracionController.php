@@ -59,11 +59,22 @@ class ConfiguracionController extends Controller
         return redirect()->route('configuracion.index')->with('success', 'IP actualizada correctamente');
     }
 
+    // public function control()
+    // {
+    //     $configuracion = Configuracion::first(); // Obtener la configuración
+    //     return view('configuracion.control', compact('configuracion'));
+    // }
+
     public function control()
-    {
-        $configuracion = Configuracion::first(); // Obtener la configuración
-        return view('configuracion.control', compact('configuracion'));
+{
+    $configuracion = Configuracion::first(); // Obtener la configuración
+
+    // Si no existe configuración, enviar una variable con el estado
+    if (!$configuracion) {
+        return view('configuracion.control', ['configuracion' => null]); // Pasamos 'null' si no existe la configuración
     }
 
+    return view('configuracion.control', compact('configuracion'));
+}
 
 }

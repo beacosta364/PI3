@@ -16,7 +16,7 @@
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Cantidad</th>
-                <th>Precio</th>
+                <th>min_stock</th>
                 <th>Imagen</th>
                 <th>Categoría</th>
                 <th>Opciones</th>
@@ -29,7 +29,8 @@
                 <td>{{ $producto->nombre }}</td>
                 <td>{{ $producto->descripcion }}</td>
                 <td>{{ $producto->cantidad }}</td>
-                <td>${{ number_format($producto->precio, 2) }}</td>
+                <td>{{ $producto->min_stock }}</td>
+                <!-- <td>${{ number_format($producto->precio, 2) }}</td> -->
                 <td>
                     @if ($producto->imagen)
                         <img src="{{ asset('img/' . $producto->imagen) }}" alt="{{ $producto->nombre }}" class="img-producto">
