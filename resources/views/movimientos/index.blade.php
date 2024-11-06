@@ -49,7 +49,7 @@
             @endforeach
         </tbody>
     </table>
-    <!-- Paginación personalizada -->
+    <!-- Paginación  -->
 <div class="pagination">
     @if ($movimientos->onFirstPage())
         <span class="disabled">« Anterior</span>

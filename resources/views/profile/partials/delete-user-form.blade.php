@@ -1,3 +1,7 @@
+<!-- Estilos para gestion de inventarios -->
+<link rel="stylesheet" href="{{ asset('css/styles-perfil.css') }}">
+
+
 <section class="space-y-6">
 
     <header>
@@ -6,7 +10,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Una vez que se elimine su cuenta, todos sus recursos y datos se eliminarán permanentemente. Antes de eliminar su cuenta, descargue cualquier dato o información que desee conservar.') }}
+            {{ __('Una vez que se elimine su cuenta, todos sus recursos y datos se eliminarán permanentemente. Antes de eliminar su cuenta, descargue cualquier dato o información que desee conservar...') }}
         </p>
     </header>
 
