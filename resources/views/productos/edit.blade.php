@@ -26,10 +26,10 @@
                 <input type="number" id="cantidad" name="cantidad" required value="{{ old('cantidad', $producto->cantidad) }}">
             </div>
 
-            <!-- Campo Precio -->
+            <!-- Campo Min_Stock -->
             <div class="form-group">
-                <label for="precio">Precio</label>
-                <input type="number" id="precio" name="precio" step="0.01" required value="{{ old('precio', $producto->precio) }}">
+                <label for="min_stock">Stock Mínimo</label>
+                <input type="number" class="form-control" id="min_stock" name="min_stock" value="{{ old('min_stock', $producto->min_stock ?? '') }}">
             </div>
 
             <!-- Campo Imagen -->
