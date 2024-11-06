@@ -5,7 +5,9 @@
     <h2 class="titulo-tabla">Productos</h2>
     <div class="botones-superiores">
         <a href="{{ route('pdfProductos') }}" target="_blank" class="btn-generar-pdf">Generar PDF</a>
+        @can('productos.create')
         <a href="{{ route('productos.create') }}" class="btn-agregar">Agregar Producto</a>
+        @endcan
     </div>
     <table>
         <thead>

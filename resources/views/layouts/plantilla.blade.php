@@ -70,7 +70,7 @@
          <p>Gestion del sistema</p>
         </div>
         <div class="element-slidebar-content">
-         <a href="{{ route('gestioninventarios') }}">Gestion del inventarios</a>
+         <a href="{{ route('gestioninventarios') }}">Gestion de inventarios</a>
          <a href="{{ route('gestionusuarios') }}">Gestion de usuarios</a>
          <!-- <a href="{{ route('controlacceso') }}">Control de acceso</a> -->
          <a href="{{ route('configuracion.control') }}">Ir a la gestión de alarma y acceso</a>
@@ -155,7 +155,7 @@
    <main class="main">
     <!-- header -->
     <header class="header">
-        <h2>dasboard</h2>
+        <!-- <h2>dashboard</h2> -->
         <button id="menu-toggle" class="menu-hamburger">☰</button>
     </header>
 
