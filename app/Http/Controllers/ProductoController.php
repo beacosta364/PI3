@@ -24,6 +24,18 @@ class ProductoController extends Controller
         return view('productos.index', compact('productos'));
         
     }
+
+    public function dashboard()
+    {
+        $productosAgotados = Producto::where('cantidad', 0)
+                            ->orWhere('cantidad', '<', DB::raw('min_stock'))
+                            ->orderBy('cantidad', 'asc')
+                            ->get();
+
+        return view('dashboard', compact('productosAgotados'));
+    }
+
+
     public function agotados()
     {
         // Obtener productos agotados (cantidad == 0) o productos por agotarse (cantidad < min_stock)

@@ -9,6 +9,8 @@ use App\Http\Controllers\GestionDelSistema;
 use App\Http\Controllers\MovimientoProductoController;
 use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +39,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', function () {
         return view('layouts.plantilla');
     });
+    //Ruta para mostrar usuarios registrados
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+
+    //ruta para mostrar productos por agotarse en dashboard
+    Route::get('/dashboard', [ProductoController::class, 'dashboard'])->name('dashboard');
 
 
     // Ruta para la gestión de inventarios
