@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{ asset('css/estilos-categoria-detalle.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <!-- Scripts -->
     <!-- este script esta generando problemas con el hamburguer -->

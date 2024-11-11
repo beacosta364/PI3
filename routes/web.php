@@ -10,6 +10,7 @@ use App\Http\Controllers\MovimientoProductoController;
 use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,8 @@ Route::middleware('auth')->group(function () {
 
 
     //ruta para mostrar productos por agotarse en dashboard
-    Route::get('/dashboard', [ProductoController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
 
 
     // Ruta para la gestión de inventarios

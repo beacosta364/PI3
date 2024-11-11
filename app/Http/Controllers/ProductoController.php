@@ -25,15 +25,15 @@ class ProductoController extends Controller
         
     }
 
-    public function dashboard()
-    {
-        $productosAgotados = Producto::where('cantidad', 0)
-                            ->orWhere('cantidad', '<', DB::raw('min_stock'))
-                            ->orderBy('cantidad', 'asc')
-                            ->get();
+    // public function dashboard()
+    // {
+    //     $productosAgotados = Producto::where('cantidad', 0)
+    //                         ->orWhere('cantidad', '<', DB::raw('min_stock'))
+    //                         ->orderBy('cantidad', 'asc')
+    //                         ->get();
 
-        return view('dashboard', compact('productosAgotados'));
-    }
+    //     return view('dashboard', compact('productosAgotados'));
+    // }
 
 
     public function agotados()
