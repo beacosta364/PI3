@@ -19,37 +19,37 @@ class RoleSeeder extends Seeder
         // Crear roles si no existen
         $roleAdmin = Role::firstOrCreate(['name' => 'admin']);
         $roleUser = Role::firstOrCreate(['name' => 'user']);
+        $roleRegistrado = Role::firstOrCreate(['name' => 'registrado']);
 
         // Crear permisos y sincronizarlos con roles
-        // Permission::create(['name' => 'categorias.index'])->syncRoles([$roleAdmin, $roleUser]);
-        // Permission::create(['name' => 'categorias.create'])->syncRoles([$roleAdmin]);
-        // Permission::create(['name' => 'categorias.edit'])->syncRoles([$roleAdmin]);
-        // Permission::create(['name' => 'categorias.show'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'categorias.index'])->syncRoles([$roleAdmin, $roleUser]);
+        Permission::firstOrCreate(['name' => 'categorias.create'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'categorias.update'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'categorias.destroy'])->syncRoles([$roleAdmin]);
 
-        // Crear permisos y sincronizarlos con roles
-        Permission::create(['name' => 'categorias.index'])->syncRoles([$roleAdmin, $roleUser]);
-        Permission::create(['name' => 'categorias.create'])->syncRoles([$roleAdmin]);
-        Permission::create(['name' => 'categorias.update'])->syncRoles([$roleAdmin]);
-        Permission::create(['name' => 'categorias.destroy'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'productos.index'])->syncRoles([$roleAdmin, $roleUser]);
+        Permission::firstOrCreate(['name' => 'productos.create'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'productos.update'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'productos.destroy'])->syncRoles([$roleAdmin]);
 
-        // $roleAdmin=Role::create(['name'=>'admin']);
-        // $roleUser=Role::create(['name'=>'user']);
+        Permission::firstOrCreate(['name' => 'reportes.inventarios'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'reportes.movimientos'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'reportes.proveedores'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'reportes.financieros'])->syncRoles([$roleAdmin]);
 
-                    // Permission::create(['name'=>'categoria.index']->syncRoles([$roleAdmin,$roleUser]));
-                    // Permission::create(['name'=>'categoria.create']->syncRoles([$roleAdmin]));
-                    // Permission::create(['name'=>'categoria.update']->syncRoles([$roleAdmin]));
-                    // Permission::create(['name'=>'categoria.destroy']->syncRoles([$roleAdmin]));
+        Permission::firstOrCreate(['name' => 'auditoria.view'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'notificaciones.view'])->syncRoles([$roleAdmin, $roleUser]);
+        Permission::firstOrCreate(['name' => 'estadisticas.view'])->syncRoles([$roleAdmin]);
 
-        // Permission::create(['name'=>'categorias.index']->syncRoles([$roleAdmin,$roleUser]));
-        // Permission::create(['name'=>'categorias.create']->syncRoles([$roleAdmin]));
-        // Permission::create(['name'=>'categorias.edit']->syncRoles([$roleAdmin]));
-        // Permission::create(['name'=>'categorias.show']->syncRoles([$roleAdmin]));
+        Permission::firstOrCreate(['name' => 'usuarios.index'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'usuarios.destroy'])->syncRoles([$roleAdmin]);
 
+        Permission::firstOrCreate(['name' => 'notificaciones.view'])->syncRoles([$roleAdmin, $roleUser]);
 
+        Permission::firstOrCreate(['name' => 'control.alarma'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'control.acceso'])->syncRoles([$roleAdmin, $roleUser]);
 
-        Permission::create(['name' => 'productos.index'])->syncRoles([$roleAdmin, $roleUser]);
-        Permission::create(['name' => 'productos.create'])->syncRoles([$roleAdmin]);
-        Permission::create(['name' => 'productos.update'])->syncRoles([$roleAdmin]);
-        Permission::create(['name' => 'productos.destroy'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'movimientos.mes'])->syncRoles([$roleAdmin]);
+        Permission::firstOrCreate(['name' => 'usuarios.registrados'])->syncRoles([$roleAdmin]);
     }
 }

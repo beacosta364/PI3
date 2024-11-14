@@ -74,10 +74,15 @@
         </div>
         <div class="element-slidebar-content">
          <a href="{{ route('gestioninventarios') }}">Gestion de inventarios</a>
-         <a href="{{ route('gestionusuarios') }}">Gestion de usuarios</a>
+         <!-- <a href="{{ route('gestionusuarios') }}">Gestion de usuarios</a> -->
          <!-- <a href="{{ route('controlacceso') }}">Control de acceso</a> -->
+          
          <a href="{{ route('configuracion.control') }}">Ir a la gestión de alarma y acceso</a>
+
+         @can('usuarios.index')
          <a href="{{ route('users.index') }}">Lista de usuarios registrados</a>
+         @endcan
+
          <a href="{{ route('productos.agotados') }}" class="btn btn-warning">Ver Productos Agotados o Por Agotarse</a>
          <!-- <a href="{{ route('alarma') }}">Gestion de Alarma</a> -->
          <!-- <a href="">Proveedores</a> -->
@@ -122,9 +127,17 @@
          <p>Monitoreo y seguridad</p>
         </div>
         <div class="element-slidebar-content">
+            @can('auditoria.view')
             <a href="">Auditoria</a>
+            @endcan
+
+            @can('notificaciones.view')
             <a href="">Notificaciones</a>
+            @endcan
+
+            @can('estadisticas.view')
             <a href="">analisis y estadisticas</a>
+            @endcan
 
         </div>
     </div>
@@ -139,20 +152,34 @@
             <a href="">Soporte y documentación</a>
 
         </div>
-        <!-- Reportes -->
+        <!-- Reportes -->  
+        @can('reportes.inventarios')  
         <div class="element-slidebar">
             <div class="element-slidebar-btn">
                 <span><img src="{{asset('img/Reportes.png')}}" alt="Reportes"></span>
                 <p>Reportes</p>
             </div>
-            <div class="element-slidebar-content">
+            <div class="element-slidebar-content"> 
+                @can('reportes.inventarios')         
                 <a href="">Reportes de inventarios</a>
-                <a href="{{ route('movimientos.reportes') }}">Reportes de movimientos</a>
-                <a href="">Reportes de proveedores</a>
-                <a href="">Reportes financieros</a>
-            </div>
-        </div>
+                @endcan
 
+                @can('reportes.movimientos')
+                <a href="{{ route('movimientos.reportes') }}">Reportes de movimientos</a>
+                @endcan
+
+                @can('reportes.proveedores')
+                <a href="">Reportes de proveedores</a>  
+                @endcan  
+
+                @can('reportes.financieros')
+                <a href="">Reportes financieros</a>
+                @endcan
+            </div>
+                
+        </div>
+        @endcan
+           
     </div>
    </aside>
 

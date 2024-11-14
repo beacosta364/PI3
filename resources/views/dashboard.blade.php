@@ -43,6 +43,8 @@
             </div>
             <a href="{{ route('gestionusuarios') }}">Gestion de usuarios</a>
         </div>    -->
+
+        @can('usuarios.registrados')
         <div class="card">
             <div class="cabecera">
                 <img src="img/Admin.png" alt="">
@@ -52,6 +54,8 @@
             </div>
             <a href="{{ route('gestionusuarios') }}">Gestion de usuarios </a>
         </div>
+        @endcan
+
         <!-- Reportes -->
         <!-- <div class="card">
             <div class="cabecera">
@@ -61,6 +65,8 @@
             </div>
             <a href="{{ route('movimientos.reportes') }}">Reportes de movimientos</a>
          </div> -->
+
+         @can('movimientos.mes')
          <div class="card">
             <div class="cabecera">
                 <img src="img/Reportes.png" alt="">
@@ -72,6 +78,8 @@
                 Reportes de movimientos 
             </a>
         </div>
+        @endcan
+
     </section >
 <!-- graficas -->
     <section class="container-graficas">

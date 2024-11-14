@@ -15,12 +15,16 @@
     </div> 
 
     <!-- Control de estado de alarma -->
+
+    @can('control.alarma')
     <div class="control-alarma">
         <h2>Control de estado de alarma</h2>
         <button id="activarAlarmaBtn">Activar Alarma</button>
         <button id="desactivarAlarmaBtn">Desactivar Alarma</button>
         <p id="statusAlarma">Estado de alarma: Desconocido</p>
     </div>
+    @endcan
+
 </section>
 
 @if ($configuracion)

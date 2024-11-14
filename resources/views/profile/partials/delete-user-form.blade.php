@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{ asset('css/styles-perfil.css') }}">
 
 
+@can('usuarios.destroy')
 <section class="space-y-6">
 
     <header>
@@ -58,3 +59,4 @@
         </form>
     </x-modal>
 </section>
+@endcan
